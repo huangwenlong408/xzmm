@@ -1,0 +1,22 @@
+<!--pages/template/index-template.wxml-->
+<template name="list">
+  <view class="tmpContainer">
+    <view class="avatar_name">
+      <image src="{{avatarUrl}}"></image>
+      <text class="username">{{nickname}}</text>
+    </view>
+    <text>{{text}}</text>
+    <view class="picture">
+      <image mode="aspectFit" wx:for="{{picture}}" wx:key="key" src="{{item}}"></image>
+    </view>
+    <view class="date">
+      <text>{{date}}</text>
+    </view>
+    <!-- <view class="star_visit">
+      <image src="/images/icon/shoucang.png"></image>
+      <text>20</text>
+      <image src="/images/icon/liuulan.png"></image>
+      <text>100</text>
+    </view> -->
+  </view>
+</template>

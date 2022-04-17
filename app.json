@@ -1,0 +1,49 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/me/me",
+    "pages/message/message",
+    "pages/catalogue/catalogue",
+    "pages/submit/submit"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#82e3cb",
+    "navigationBarTitleText": "",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "color": "#808080",
+    "selectedColor": "#82e3cb",
+    "borderStyle": "white",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "images/tabBar/shouye.png",
+        "selectedIconPath": "images/tabBarSeleted/shouye.png"
+      },
+      {
+        "pagePath": "pages/catalogue/catalogue",
+        "text": "分类",
+        "iconPath": "images/tabBar/fenlei.png",
+        "selectedIconPath": "images/tabBarSeleted/fenlei.png"
+      },
+      {
+        "pagePath": "pages/message/message",
+        "text": "消息",
+        "iconPath": "images/tabBar/xiaoxi.png",
+        "selectedIconPath": "images/tabBarSeleted/xiaoxi.png"
+      },
+      {
+        "pagePath": "pages/me/me",
+        "text": "我的",
+        "iconPath": "images/tabBar/wode.png",
+        "selectedIconPath": "images/tabBarSeleted/wode.png"
+      }
+    ]
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json",
+  "lazyCodeLoading": "requiredComponents"
+}

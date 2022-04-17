@@ -1,0 +1,47 @@
+/* pages/template/index-template.wxss */
+.tmpContainer {
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+  padding-top: 0;
+  padding-left: 10rpx;
+}
+.avatar_name image {
+  margin: 10rpx;
+  width: 60rpx;
+  height: 60rpx;
+  vertical-align: middle;
+}
+.username {
+  margin-left: 15rpx;
+  font-size: 32rpx;
+  font-weight: 600;
+  margin-bottom: 10rpx;
+}
+.picture {
+  width: 95%;
+}
+.picture image {
+  margin-right: 20rpx;
+  width: 300rpx;
+  /* height: 300rpx; */
+}
+.star_visit image {
+  width: 32rpx;
+  height: 32rpx;
+  vertical-align: middle;
+  margin-right: 5rpx;
+}
+.star_visit text {
+  font-size: 24rpx;
+  margin-right: 10rpx;
+}
+.star_visit {
+  text-align: right;
+}
+.date {
+  text-align: right;
+  margin-top: 20rpx;
+  font-size: 24rpx;
+  color: #8a8a8a;
+}

@@ -1,0 +1,33 @@
+/* pages/me/me.wxss */
+.userinfo {
+  text-align: center;
+  padding-top: 10px;
+}
+
+.userinfo image {
+  /* display: block; */
+  overflow: hidden;
+  width: 81rpx;
+  height: 81rpx;
+  margin: 20rpx;
+  border-radius: 50%;
+  border: 1rpx solid gray;
+  vertical-align: middle;
+}
+
+.login button {
+  color: #fff;
+  background-color: #82e3cb;
+}
+.logout,.login {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  position: fixed;
+  bottom: 10%;
+}
+.logout button {
+  color: #fff;
+  background-color: #82e3cb;
+}

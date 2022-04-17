@@ -1,0 +1,80 @@
+/* pages/submit/submit.wxss */
+.container {
+  padding: 0;
+  width: 100%;
+  height: 100%;
+}
+.topBar {
+  width: 90%;
+  height: 80rpx;
+  margin: 20rpx;
+  align-items: center;
+  background-color: #eace7b;
+  border-radius: 15rpx;
+}
+.topBar .text1 {
+  margin-top: 20rpx;
+  padding-left: 10rpx;
+  float: left;
+  font-size: 30rpx;
+}
+.topBar .text2 {
+  margin-top: 14rpx;
+  padding-right: 10rpx;
+  font-size: 40rpx;
+  float: right;
+}
+.input {
+  justify-content: center;
+  border: 2rpx solid darkslategrey;
+  width: 90%;
+}
+.input image {
+  margin-right: 20rpx;
+  margin-bottom: 20rpx;
+  float: right;
+  width: 50rpx;
+  height: 40rpx;
+}
+button {
+  color: white;
+  position: relative;
+  background-color: #82e3cb;
+}
+.btn {
+  position: fixed;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  bottom: 10%;
+}
+.imgs {
+  padding: 40rpx;
+  display: flex;
+  position: relative;
+  width: 100%;
+  align-items: center;
+  /* height: 200rpx; */
+  /* overflow: hidden; */
+}
+.img {
+  border: 1rpx solid darkslategrey;
+  margin-right: 60rpx;
+  /* width: 200rpx; */
+  /* height: 200rpx; */
+  overflow: hidden;
+  border-radius: 20rpx;
+}
+.img image {
+  float: left;
+  height: 200rpx;
+  width: 300rpx;
+}
+.section {
+  width: 100%;
+  height: 100rpx;
+}
+.section picker {
+  text-align: center;
+}

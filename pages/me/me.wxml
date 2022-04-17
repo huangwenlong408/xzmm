@@ -1,0 +1,12 @@
+<view>
+  <view class="login" wx:if="{{!openid}}">
+    <button bindtap="login">登录</button>
+  </view>
+  <view class="userinfo" wx:if="{{openid}}">
+    <image class="" src="{{userInfo.avatarUrl}}" mode="cover"></image>
+    <text class="u">{{userInfo.nickName}}</text>
+  </view>
+  <view class="logout" wx:if="{{openid}}">
+    <button bindtap="logout">退出登录</button>
+  </view>
+</view>

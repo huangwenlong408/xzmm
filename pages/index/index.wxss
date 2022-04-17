@@ -1,0 +1,32 @@
+/**index.wxss**/
+@import '/pages/template/index-template.wxss';
+/* Page {
+  height: 100%;
+} */
+.container {
+  padding: 0;
+  width: 100%;
+  height: 100%;
+}
+.content {
+  padding-top: 0;
+}
+swiper {
+  width: 100%;
+  height: 200rpx;
+}
+swiper image {
+  height: 100%;
+  width: 100%;
+}
+.fabu {
+  position: fixed;
+  bottom: 50rpx;
+  right: 20rpx;
+}
+.fabu image{
+  width: 128rpx;
+  height: 128rpx;
+  border-radius: 50%;
+  background-color: white;
+}

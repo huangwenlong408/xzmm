@@ -1,0 +1,31 @@
+<!--pages/submit/submit.wxml-->
+<view class="container">
+  <view class="topBar">
+    <text class="text1">发布内容需符合法律和规范</text>
+    <text class="text2">></text>
+  </view>
+  <view class="input">
+    <textarea value="{{textData}}" bindinput="handleTextInput" placeholder="开始发布你的闲置物品"  maxlength="100" />
+    <view bindtap="getPhotos">
+      <image src="/images/icon/camera.png"></image>
+    </view>
+  </view>
+</view>
+<view class="section">
+  <!-- <text>联系方式</text> -->
+  <picker mode="selector" bindchange="pickerchange" range="{{pickerArr}}" value="{{index}}" >
+    <view>
+      联系方式：{{index==-1 ? "请选择" :pickerArr[index]}}
+    </view>
+  </picker>
+</view>
+<view class="imgs">
+  <view class="img" wx:for="{{photoData}}" wx:key="key">
+    <image mode="aspectFill" src="{{item.tempFilePath}}"></image>
+    <!-- <text>{{item.size/1024}}KB</text> -->
+  </view>
+</view>
+
+<view class="btn">
+  <button bindtap="submit">发  布</button>
+</view>

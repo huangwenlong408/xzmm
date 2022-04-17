@@ -1,0 +1,17 @@
+<import src="/pages/template/index-template"/>
+<view class="container">
+  <swiper indicator-dots circular>
+    <swiper-item>
+      <image src="cloud://xzmmcloud-4gnv9egj658c322c.787a-xzmmcloud-4gnv9egj658c322c-1311226059/swiper/banner20220329.png"></image>
+    </swiper-item>
+    <swiper-item>
+      <image src="cloud://xzmmcloud-4gnv9egj658c322c.787a-xzmmcloud-4gnv9egj658c322c-1311226059/swiper/banner211231.png"></image>
+    </swiper-item>
+  </swiper>
+  <block wx:for="{{commodity}}" wx:key="key">
+    <template is="list" data="{{...item}}"/>
+  </block>
+  <view class="fabu" bindtap="submitClick">
+    <image src="/images/tabBarSeleted/fabu.png"></image>
+  </view>
+</view>
