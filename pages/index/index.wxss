@@ -7,6 +7,7 @@
   padding: 0;
   width: 100%;
   height: 100%;
+  background-color: #f2f2f2;
 }
 .content {
   padding-top: 0;
@@ -18,6 +19,19 @@ swiper {
 swiper image {
   height: 100%;
   width: 100%;
+}
+.search {
+  background-color: #fff;
+  display: flex;
+  flex-direction: row;
+  width: 90%;
+  border-radius: 20rpx;
+  margin-top: 20rpx;
+  margin-bottom: 10rpx;
+}
+.search input {
+  width: 100%;
+  height: 32px;
 }
 .fabu {
   position: fixed;

@@ -1,12 +1,62 @@
-<view>
-  <view class="login" wx:if="{{!openid}}">
+<view class="beforeLogin" wx:if="{{!openid}}">
+  <view class="login" >
     <button bindtap="login">登录</button>
   </view>
-  <view class="userinfo" wx:if="{{openid}}">
-    <image class="" src="{{userInfo.avatarUrl}}" mode="cover"></image>
-    <text class="u">{{userInfo.nickName}}</text>
+  
+</view>
+  <!-- 重新设计此页面结构和样式，采用flex布局 -->
+<view class="afterLogin" wx:if="{{openid}}">
+  <view class="section1">
+    <view class="userInfo">
+      <image src="{{userInfo.avatarUrl}}" mode="cover"></image>
+      <text>{{userInfo.nickName}}</text>
+    </view>
+    <view class="detailInfo">
+      <view>
+        <text class="number">1</text>
+        <text class="title">求  购</text>
+      </view>
+      <view>
+        <text class="number">3</text>
+        <text class="title">出  售</text>
+      </view>
+      <view>
+        <text class="number">2</text>
+        <text class="title">想  要</text>
+      </view>
+    </view>
   </view>
-  <view class="logout" wx:if="{{openid}}">
+  <view class="section2">
+    <view>
+      <text>消息通知</text>
+      <image src="/images/icon/right.png"></image>
+    </view>
+    <br/>
+    <view>
+      <text>通用设置</text>
+      <image src="/images/icon/right.png"></image>
+    </view>
+    <br/>
+    <view>
+      <text>关于我们</text>
+      <image src="/images/icon/right.png"></image>
+    </view>
+    <br/>
+    <view>
+      <text>分享给好友</text>
+      <image src="/images/icon/right.png"></image>
+    </view>
+    <br/>
+    <view>
+      <text>黑名单</text>
+      <image src="/images/icon/right.png"></image>
+    </view>
+  </view>
+  
+  <view class="section4">
+    <text>闲置卖卖 Dev 1.0.0</text>
+  </view>
+  <view class="section3">
     <button bindtap="logout">退出登录</button>
   </view>
 </view>

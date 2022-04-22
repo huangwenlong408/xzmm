@@ -6,6 +6,9 @@ Page({
   },
   // 登录
   login(){
+    wx.showLoading({
+      title: '登录中',
+    })
     const that = this;
     wx.getUserProfile({
       desc: '获取用户信息',
@@ -22,6 +25,7 @@ Page({
             })
             that.data.userInfo.openid = that.data.openid
             wx.setStorageSync('userInfo', that.data.userInfo)
+            wx.hideLoading()
             wx.showToast({
               title: '登录成功',
             })

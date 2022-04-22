@@ -7,11 +7,13 @@ Page({
     photoData: [],
     fileID: [],
   },
+  // 
   pickerchange(event){
     this.setData({
       index: event.detail.value
     })
   },
+  // 上传图片
   getPhotos(){
     const that = this
     wx.showActionSheet({
@@ -38,18 +40,19 @@ Page({
       }
     })
   },
+  // 检测输入框内容
   handleTextInput(event){
     this.setData({
       textData: event.detail.value
     })
   },
   // 点击发布闲置按钮
-  submit(event){
+  submit(){
     // 获取缓存中的userInfo
     const that = this
     const TD = this.data.textData
     const UI = wx.getStorageSync('userInfo')
-
+    // 判断用户是否登录
     if(!UI.openid){
       wx.showModal({
         title: '提示',
@@ -68,21 +71,29 @@ Page({
         },
       });
     }else{
-      // console.log(this.data)
-      for (const val of this.data.photoData) {
-        console.log(val)
-        wx.cloud.uploadFile({
-          cloudPath: "userPhoto/" + UI.openid + Date.now() + ".png",
-          filePath: val.tempFilePath
-        }).then(res => {
-          const FILEID = res.fileID
-          this.setData({
-            fileID: this.data.fileID.concat(FILEID)
+      // 如果已经登录了
+      wx.showLoading({
+        title: '发布中',
+      })
+      new Promise((resolve) => {
+        for (const val of this.data.photoData) {
+          console.log(val)
+          wx.cloud.uploadFile({
+            cloudPath: "userPhoto/" + UI.openid + Date.now() + ".png",
+            filePath: val.tempFilePath
+          }).then(res => {
+            const FILEID = res.fileID
+            this.setData({
+              fileID: this.data.fileID.concat(FILEID)
+            })
+            // 判断是否处理到最后一张图片
+            if(val === this.data.photoData.slice(-1)[0]){
+              resolve('done')
+            }
+            // console.log(this.data.fileID)
           })
-          // console.log(this.data.fileID)
-        })
-      }
-      setTimeout(() => {
+        }
+      }).then(() => {
         wx.cloud.callFunction({
           name:"createcommodity",
           data:{
@@ -95,17 +106,20 @@ Page({
             picture: that.data.fileID
           },
         })
-      },2000)
+        wx.hideLoading({
+          success: () => {
+            wx.switchTab({
+              url: '/pages/index/index',
+            })
+            wx.showToast({
+              title: '发布成功',
+              duration: 1000
+            })
+          },
+        })
+      })
       
-      wx.switchTab({
-        url: '/pages/index/index',
-      })
-      wx.showToast({
-        title: '发布成功',
-        duration: 2000,
-  
-      })
+      
     }
-    
   }
 })
